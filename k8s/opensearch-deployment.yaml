@@ -30,7 +30,7 @@ spec:
               value: single-node
 
             - name: OPENSEARCH_INITIAL_ADMIN_PASSWORD
-              value: "admin"
+              value: "Admin123@"
 
             - name: OPENSEARCH_JAVA_OPTS
               value: "-Xms512m -Xmx512m"
