@@ -17,7 +17,7 @@ data:
       read_from_head true
 
       <parse>
-        @type json
+        @type gri
       </parse>
     </source>
 
@@ -25,8 +25,8 @@ data:
       @type grep
 
       <regexp>
-        key $.kubernetes.labels.app
-        pattern ^k8s-demo$
+        key $.kubernetes.pod_name
+        pattern k8s-demo
       </regexp>
     </filter>
 
@@ -36,7 +36,7 @@ data:
     <match fluent.warn>
       @type null
     </match>
-    
+
     <match **>
       @type opensearch
 
