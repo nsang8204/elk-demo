@@ -22,6 +22,10 @@ data:
     </source>
 
     <filter kubernetes.**>
+      @type kubernetes_metadata
+    </filter>
+
+    <filter kubernetes.**>
       @type grep
 
       <regexp>
