@@ -15,7 +15,7 @@ spec:
         app: fluentd
 
     spec:
-      serviceAccountName: default
+      serviceAccountName: fluentd
 
       containers:
         - name: fluentd
