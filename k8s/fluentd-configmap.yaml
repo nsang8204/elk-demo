@@ -33,7 +33,10 @@ data:
     # <match **>
     #   @type stdout
     # </match>
-
+    <match fluent.warn>
+      @type null
+    </match>
+    
     <match **>
       @type opensearch
 
