@@ -17,13 +17,13 @@ data:
       read_from_head true
 
       <parse>
-        @type none
+        @type cri
       </parse>
     </source>
 
-    # <filter kubernetes.**>
-    #   @type kubernetes_metadata
-    # </filter>
+    <filter kubernetes.**>
+      @type kubernetes_metadata
+    </filter>
 
     <match kubernetes.**>
       @type opensearch
