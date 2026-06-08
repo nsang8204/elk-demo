@@ -32,7 +32,11 @@ data:
 
       port 9200
 
-      scheme http
+      scheme https
+      ssl_verify false
+
+      user admin
+      password GuEsT456@@789
 
       logstash_format true
 
