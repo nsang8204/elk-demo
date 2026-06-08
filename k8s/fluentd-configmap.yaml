@@ -32,7 +32,7 @@ data:
 
       port 9200
 
-      scheme https
+      scheme http
 
       logstash_format true
 
