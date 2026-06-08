@@ -40,14 +40,14 @@ data:
 
       <regexp>
         key $.kubernetes.pod_name
-        pattern ^k8s-demo
+        pattern k8s-demo
       </regexp>
     </filter>
 
     <match **>
       @type stdout
     </match>
-    
+
     <match fluent.warn>
       @type null
     </match>
@@ -67,7 +67,7 @@ data:
       auth_method basic
 
       logstash_format true
-      logstash_prefix k8s
+      logstash_prefix k8s-demo
       include_tag_key true
       tag_key fluent_tag
 
