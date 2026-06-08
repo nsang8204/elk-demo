@@ -24,18 +24,15 @@ spec:
           ports:
             - containerPort: 5601
 
-          env:
-            - name: OPENSEARCH_HOSTS
-              value: '["https://opensearch:9200"]'
+          volumeMounts:
+            - name: dashboards-config
+              mountPath: /usr/share/opensearch-dashboards/config/opensearch_dashboards.yml
+              subPath: opensearch_dashboards.yml
 
-            - name: OPENSEARCH_USERNAME
-              value: admin
-
-            - name: OPENSEARCH_PASSWORD
-              value: "GuEsT456@@789"
-
-            - name: OPENSEARCH_SSL_VERIFICATIONMODE
-              value: none
+      volumes:
+        - name: dashboards-config
+          configMap:
+            name: dashboards-config
 
 ---
 apiVersion: v1
