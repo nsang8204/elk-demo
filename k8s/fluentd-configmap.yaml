@@ -22,7 +22,12 @@ data:
     </source>
 
     <filter kubernetes.**>
-      @type kubernetes_metadata
+      @type grep
+
+      <regexp>
+        key $.kubernetes.labels.app
+        pattern ^k8s-demo$
+      </regexp>
     </filter>
 
     # <match **>
