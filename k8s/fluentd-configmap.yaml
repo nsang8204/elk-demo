@@ -22,6 +22,16 @@ data:
     </source>
 
     <filter kubernetes.**>
+      @type parser
+      key_name log
+      reserve_data true
+      remove_key_name_field true
+      <parse>
+        @type json
+      </parse>
+    </filter>
+
+    <filter kubernetes.**>
       @type kubernetes_metadata
     </filter>
 
@@ -34,19 +44,10 @@ data:
       </regexp>
     </filter>
 
-    <filter kubernetes.**>
-      @type parser
-      key_name log
-      reserve_data true
-      remove_key_name_field true
-      <parse>
-        @type json
-      </parse>
-    </filter>
-
-    # <match **>
-    #   @type stdout
-    # </match>
+    <match **>
+      @type stdout
+    </match>
+    
     <match fluent.warn>
       @type null
     </match>
