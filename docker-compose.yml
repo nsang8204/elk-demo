@@ -1,5 +1,4 @@
 services:
-  # Container cho Redis
   redis:
     image: redis:alpine
     ports:

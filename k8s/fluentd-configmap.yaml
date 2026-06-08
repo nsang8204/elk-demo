@@ -21,9 +21,9 @@ data:
       </parse>
     </source>
 
-    <filter kubernetes.**>
-      @type kubernetes_metadata
-    </filter>
+    # <filter kubernetes.**>
+    #   @type kubernetes_metadata
+    # </filter>
 
     <match kubernetes.**>
       @type opensearch
