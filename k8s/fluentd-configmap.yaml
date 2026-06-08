@@ -17,7 +17,7 @@ data:
       read_from_head true
 
       <parse>
-        @type cri
+        @type none
       </parse>
     </source>
 
@@ -25,7 +25,11 @@ data:
       @type kubernetes_metadata
     </filter>
 
-    <match kubernetes.**>
+    <match **>
+      @type stdout
+    </match>
+
+    <match **>
       @type opensearch
 
       host opensearch
