@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-demo
+  template:
+    metadata:
+      labels:
+        app: k8s-demo
+    spec:
+      containers:
+      - name: k8s-demo
+        image: ghcr.io/nsang8204/k8s-demo3:latest
+        ports:
+        - containerPort: 3000
+
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: k8s-demo-pvc
