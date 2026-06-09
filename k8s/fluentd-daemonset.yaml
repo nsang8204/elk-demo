@@ -33,6 +33,10 @@ spec:
             - name: config-volume
               mountPath: /fluentd/etc
 
+            - name: dockercontainers
+              mountPath: /var/lib/docker/containers
+              readOnly: true
+
       volumes:
         - name: varlog
           hostPath:
@@ -41,3 +45,7 @@ spec:
         - name: config-volume
           configMap:
             name: fluentd-config
+
+        - name: dockercontainers
+          hostPath:
+            path: /var/lib/docker/containers
