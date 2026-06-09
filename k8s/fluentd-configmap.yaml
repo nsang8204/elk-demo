@@ -44,37 +44,37 @@ data:
       </regexp>
     </filter>
 
-    # <match **>
-    #   @type stdout
-    # </match>
+    <match **>
+      @type stdout
+    </match>
 
     <match fluent.warn>
       @type null
     </match>
 
-    <match **>
-      @type opensearch
+    # <match **>
+    #   @type opensearch
 
-      host opensearch
-      port 9200
+    #   host opensearch
+    #   port 9200
 
-      scheme https
-      ssl_verify false
-      ssl_version TLSv1_2
+    #   scheme https
+    #   ssl_verify false
+    #   ssl_version TLSv1_2
 
-      user admin
-      password GuEsT456@@789
-      auth_method basic
+    #   user admin
+    #   password GuEsT456@@789
+    #   auth_method basic
 
-      logstash_format true
-      logstash_prefix k8s-demo
-      include_tag_key true
-      tag_key fluent_tag
+    #   logstash_format true
+    #   logstash_prefix k8s-demo
+    #   include_tag_key true
+    #   tag_key fluent_tag
 
-      <buffer>
-        @type file
-        path /fluentd/buffer/opensearch
-        flush_interval 5s
-        retry_forever true
-      </buffer>
-    </match>
+    #   <buffer>
+    #     @type file
+    #     path /fluentd/buffer/opensearch
+    #     flush_interval 5s
+    #     retry_forever true
+    #   </buffer>
+    # </match>
