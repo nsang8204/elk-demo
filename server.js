@@ -12,7 +12,9 @@ client.on('error', (err) => console.error('Redis Client Error', err));
 
 async function connectRedis() {
     await client.connect();
-    console.log('Đã kết nối thành công tới Redis!');
+    console.log(JSON.stringify({
+        event: 'Đã kết nối thành công tới Redis!'
+    }));
 }
 connectRedis();
 
@@ -32,5 +34,7 @@ app.get('/', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server đang chạy tại http://localhost:${PORT}`);
+    console.log(JSON.stringify({
+        event: `Server đang chạy tại http://localhost:${PORT}`
+    }));
 });
